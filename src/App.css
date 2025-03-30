@@ -16,53 +16,59 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #7dc2ff, #3a7bd5);
+  padding: 2rem;
 }
 
 .advice-container {
-  margin-top: 5rem;
   text-align: center;
-  width: 80%;
-  max-width: 800px;
-  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  padding: 2.5rem;
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
 }
 
 .advice-container:hover {
   transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 2rem;
-  line-height: 1.4;
+  line-height: 1.5;
   color: #2c3e50;
   font-weight: 600;
-  min-height: 3em;
+  min-height: 2.5em;
+  letter-spacing: 0.01em;
 }
 
 .advice-button {
   background-color: #3a7bd5;
   color: white;
-  padding: 0.8rem 1.5rem;
+  padding: 0.9rem 2rem;
   border: none;
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   display: block;
   margin: 0 auto;
   box-shadow: 0 4px 12px rgba(58, 123, 213, 0.3);
+  letter-spacing: 0.03em;
 }
 
 .advice-button:hover {
   background-color: #2c6cbd;
   transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(58, 123, 213, 0.4);
 }
 
 .advice-button:active {
@@ -70,12 +76,15 @@ h1 {
 }
 
 .counter {
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
   color: white;
   font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .counter-number {
@@ -87,15 +96,32 @@ h1 {
   margin: 0 0.5rem;
 }
 
+/* Loading state for button */
+.advice-button.loading {
+  opacity: 0.8;
+  cursor: wait;
+}
+
+/* Empty state styling */
+.empty-state {
+  color: #95a5a6;
+  font-style: italic;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .advice-container {
-    width: 90%;
-    padding: 1.5rem;
-    margin-top: 3rem;
+    width: 95%;
+    padding: 1.8rem;
   }
   
   h1 {
     font-size: 1.5rem;
+    min-height: 1.8em;
+  }
+  
+  .advice-button {
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
   }
 }
